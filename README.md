@@ -54,3 +54,7 @@ The first command shows which patches the game carries. Applying writes a
 
 Offsets are file offsets in `SWSENGPP.EXE` (2,135,087 bytes, SHA-256
 `d0ea0e7c53b408967ed788105aa9570a228fbd8761b40053b16fddc55d4d21d7`).
+
+## Licence
+
+MIT - see [LICENSE](LICENSE). Sensible World of Soccer itself is not covered and is not included.
