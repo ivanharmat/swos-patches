@@ -1,0 +1,19 @@
+{
+    "key": "uefa-cup-slovakia",
+    "name": "Slovakia: 3 UEFA Cup places",
+    "description": "Moves Slovakia's three UEFA Cup entries into the top group of the draw, replacing one entry each of Germany, Italy and England. Slovakia averages two UEFA Cup clubs a season wherever you manage, and always gets three when you manage there. Hungary takes over Slovakia's old small-country entry.",
+    "changes": [
+        {
+            "offset": 1367886,
+            "original": "0e0e0e0e1414141423232323080808",
+            "patched": "0e0e0e4e1414144e2323232308084e",
+            "note": "Top UEFA Cup group (15 entries, 10 drawn)"
+        },
+        {
+            "offset": 1367941,
+            "original": "100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "100c0011051b1a181217040a0b131516202227284c10",
+            "note": "Small-country UEFA Cup group (22 entries, 4 drawn)"
+        }
+    ]
+}
