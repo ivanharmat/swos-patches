@@ -1,0 +1,73 @@
+{
+    "key": "unlimited-career",
+    "name": "Unlimited career length",
+    "description": "Careers no longer end after 20 seasons. When a career passes season 20 the oldest season drops out of the management record, the rest move up and you carry on in the last slot - the year keeps counting as normal.",
+    "changes": [
+        {
+            "offset": 11604,
+            "original": "790b",
+            "patched": "0010",
+            "note": "Code segment size, to cover the new routine"
+        },
+        {
+            "offset": 830459,
+            "original": "13",
+            "patched": "7f",
+            "note": "Final-season check switched off"
+        },
+        {
+            "offset": 831044,
+            "original": "13",
+            "patched": "7f",
+            "note": "Final-season check switched off"
+        },
+        {
+            "offset": 831604,
+            "original": "13",
+            "patched": "7f",
+            "note": "Final-season check switched off"
+        },
+        {
+            "offset": 832166,
+            "original": "13",
+            "patched": "7f",
+            "note": "Final-season check switched off"
+        },
+        {
+            "offset": 840349,
+            "original": "13",
+            "patched": "7f",
+            "note": "Final-season check switched off"
+        },
+        {
+            "offset": 980311,
+            "original": "13",
+            "patched": "7f",
+            "note": "Final-season check switched off"
+        },
+        {
+            "offset": 1184793,
+            "original": "13",
+            "patched": "7f",
+            "note": "Final-season check switched off"
+        },
+        {
+            "offset": 1184817,
+            "original": "13",
+            "patched": "7f",
+            "note": "Final-season check switched off"
+        },
+        {
+            "offset": 1182363,
+            "original": "668305506b01000166833d506b010014750966c705506b01000000",
+            "patched": "5690be506b0100eb069090506b0100e9d13e020090506b01009090",
+            "note": "Season change jumps to the new routine"
+        },
+        {
+            "offset": 1329536,
+            "original": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "patched": "66ff0666833e147245535157668b9ec80a00008dbec80a0000568db6320b0000b9de070000fcf3a45031c0b96a000000f3aa585e66899ec80a000066c706130066837e02137c0466ff4e025f595b5ee9e2c0fdff",
+            "note": "New routine: shift the management record when passing season 20"
+        }
+    ]
+}

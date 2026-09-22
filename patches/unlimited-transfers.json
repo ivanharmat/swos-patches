@@ -1,0 +1,13 @@
+{
+    "key": "unlimited-transfers",
+    "name": "No chairman transfer limit",
+    "description": "The chairman's signing allowance is rebuilt each season (and on a new job) from a far larger budget, so he never stops you buying. Takes effect from the next season or job change.",
+    "changes": [
+        {
+            "offset": 1185468,
+            "original": "6001",
+            "patched": "ff7f",
+            "note": "Allowance budget: 352 -> 32767"
+        }
+    ]
+}

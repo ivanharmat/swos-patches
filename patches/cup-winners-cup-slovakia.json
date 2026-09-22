@@ -1,0 +1,25 @@
+{
+    "key": "cup-winners-cup-slovakia",
+    "name": "Slovakia: guaranteed Cup Winners' Cup place",
+    "description": "Moves Slovakia into the always-drawn middle group of the Cup Winners' Cup, so the Slovak cup winner plays every season. The small-country group draws 10 instead of 11 to keep the cup at 32 clubs.",
+    "changes": [
+        {
+            "offset": 641292,
+            "original": "04",
+            "patched": "05",
+            "note": "Relocation of the small-country group pointer"
+        },
+        {
+            "offset": 1368779,
+            "original": "ef94000004000400f394000006000600f99400000b000b000495000016000b00",
+            "patched": "ef94000004000400f394000006000600f99400000c000c000595000015000a00",
+            "note": "Group table (pointer, size, clubs drawn)"
+        },
+        {
+            "offset": 1368815,
+            "original": "0e142308020d1d1e1f29010306070f191c21242526100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "0e142308020d1d1e1f29010306070f191c212425264e100c0011051b1a181217040a0b131516202227284c",
+            "note": "Country lists"
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "key": "champions-league-slovakia",
+    "name": "Slovakia: guaranteed Champions League place",
+    "description": "Adds Slovakia to the always-drawn top group of the Champions League (European Cup), so the Slovak champion plays every season. The middle group (Austria, Netherlands and others) draws 4 instead of 5 to keep the cup at 16 clubs.",
+    "changes": [
+        {
+            "offset": 641250,
+            "original": "a4",
+            "patched": "a5",
+            "note": "Relocation of the second group pointer"
+        },
+        {
+            "offset": 641257,
+            "original": "aa",
+            "patched": "ab",
+            "note": "Relocation of the third group pointer"
+        },
+        {
+            "offset": 641264,
+            "original": "b5",
+            "patched": "b6",
+            "note": "Relocation of the fourth group pointer"
+        },
+        {
+            "offset": 1368700,
+            "original": "a094000004000400a494000006000500aa9400000b000500b594000016000200",
+            "patched": "a094000005000500a594000006000500ab9400000b000400b694000015000200",
+            "note": "Group table (pointer, size, clubs drawn)"
+        },
+        {
+            "offset": 1368736,
+            "original": "0e142308020d1d1e1f29010306070f191c21242526100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "0e1423084e020d1d1e1f29010306070f191c21242526100c0011051b1a181217040a0b131516202227284c",
+            "note": "Country lists"
+        }
+    ]
+}
