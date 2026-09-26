@@ -4,7 +4,7 @@
     "groupName": "More European places for one league",
     "variant": "Lithuania",
     "name": "More European places: Lithuania",
-    "description": "Lithuania's champion always plays in the Champions League and its cup winner always in the Cup Winners' Cup. It also gets three UEFA Cup places when you manage there, and about two a season when you manage elsewhere. The places come from the countries that have the most.",
+    "description": "Lithuania's champion always plays in the Champions League and its cup winner always in the Cup Winners' Cup. It also gets three UEFA Cup places when you manage there, and about two a season when you manage elsewhere. The places come from the countries that have the most. The first season is drawn from fixed line-ups inside the game, so its strongest clubs are put into those as well.",
     "changes": [
         {
             "offset": 1367692,
@@ -65,6 +65,18 @@
             "original": "0e0e0e0e14141414232323230808080202020d0d0d1d1d1d1e1e1e1f1f1f29292901010303060607070f0f19191c1c2121242425252626100c0011051b1a181217040a0b131516202227284c4e",
             "patched": "160e0e0e16141414162323230808080202020d0d0d1d1d1d1e1e1e1f1f1f29292901010303060607070f0f19191c1c2121242425252626100c0011051b1a181217040a0b13150e202227284c4e",
             "note": "UEFA Cup: country lists"
+        },
+        {
+            "offset": 1359244,
+            "original": "07001d0c0d200f1308041c061b0a1f100e04141421211e121900100525052323",
+            "patched": "07001d0c16060f1308041c061b0a1f100e04141421211e121900100525052323",
+            "note": "First season: the European Cup line-up"
+        },
+        {
+            "offset": 1359404,
+            "original": "0d03081923081d17020714262508060a27010d14070308110e2a4c020d2e14001d021918060c15060d061f0e0e15230a080f191523280f110d1814150e032120",
+            "patched": "0d03081923081d17020714262508060a27010d14070308110e2a4c020d2e14001d021918060c15060d061f0e0e15230a080f191516050f111601141516022120",
+            "note": "First season: the UEFA Cup line-up"
         }
     ]
 }

@@ -18,7 +18,7 @@ bytes and can always be taken out again.
 
 | Key | What it does |
 |---|---|
-| `european-places-<league>` | One league of your choice gets far more European places: its champion always plays in the Champions League, its cup winner always in the Cup Winners' Cup, and it gets three UEFA Cup places when you manage there (about two otherwise). One league at a time; any European league outside the top group (Germany, Italy, Spain, England) can be picked, for example `european-places-slovakia`. |
+| `european-places-<league>` | One league of your choice gets far more European places: its champion always plays in the Champions League, its cup winner always in the Cup Winners' Cup, and it gets three UEFA Cup places when you manage there (about two otherwise). The first season is drawn from fixed line-ups inside the game, so the league's strongest clubs are put into those as well. One league at a time; any European league outside the top group (Germany, Italy, Spain, England) can be picked, for example `european-places-slovakia`. |
 | `unlimited-transfers` | The chairman no longer stops you signing players. From the next season or job. |
 | `unlimited-career` | Careers carry on past 20 seasons; the management record keeps the latest 20. |
 

@@ -4,7 +4,7 @@
     "groupName": "More European places for one league",
     "variant": "France",
     "name": "More European places: France",
-    "description": "France's champion always plays in the Champions League and its cup winner always in the Cup Winners' Cup. It also gets three UEFA Cup places when you manage there, and about two a season when you manage elsewhere. The places come from the countries that have the most.",
+    "description": "France's champion always plays in the Champions League and its cup winner always in the Cup Winners' Cup. It also gets three UEFA Cup places when you manage there, and about two a season when you manage elsewhere. The places come from the countries that have the most. The first season is drawn from fixed line-ups inside the game, so its strongest clubs are put into those as well.",
     "changes": [
         {
             "offset": 1367692,

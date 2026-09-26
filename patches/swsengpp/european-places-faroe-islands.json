@@ -4,7 +4,7 @@
     "groupName": "More European places for one league",
     "variant": "Faroe Islands",
     "name": "More European places: Faroe Islands",
-    "description": "Faroe Islands's champion always plays in the Champions League and its cup winner always in the Cup Winners' Cup. It also gets three UEFA Cup places when you manage there, and about two a season when you manage elsewhere. The places come from the countries that have the most.",
+    "description": "Faroe Islands's champion always plays in the Champions League and its cup winner always in the Cup Winners' Cup. It also gets three UEFA Cup places when you manage there, and about two a season when you manage elsewhere. The places come from the countries that have the most. The first season is drawn from fixed line-ups inside the game, so its strongest clubs are put into those as well.",
     "changes": [
         {
             "offset": 1368700,
@@ -65,6 +65,24 @@
             "original": "0e0e0e0e14141414232323230808080202020d0d0d1d1d1d1e1e1e1f1f1f29292901010303060607070f0f19191c1c2121242425252626100c0011051b1a181217040a0b131516202227284c4e",
             "patched": "0b0e0e0e0b1414140b2323230808080202020d0d0d1d1d1d1e1e1e1f1f1f29292901010303060607070f0f19191c1c2121242425252626100c0011051b1a181217040a0e131516202227284c4e",
             "note": "UEFA Cup: country lists"
+        },
+        {
+            "offset": 1360268,
+            "original": "0d0119152501210923081f130e031c0727042605141f08000704040602041d01",
+            "patched": "0d011915250121090b061f130e031c0727042605141f08000704040602041d01",
+            "note": "First season: the European Cup line-up"
+        },
+        {
+            "offset": 1360328,
+            "original": "000501084c0e02110505060c08140a030c000e040f00190a10001104130a1503160a17001a0a1b0b1d0412061f1621184e002200232824012504270d28122903",
+            "patched": "000501084c0e02110505060c08140a030c000e040f00190a10001104130a1503160a17001a0a1b0b1d0412061f1621184e0022000b0024012504270d28122903",
+            "note": "First season: the Cup Winners' Cup line-up"
+        },
+        {
+            "offset": 1360420,
+            "original": "02002711010026090105250e02062316030023040504141c060e230e060a1f0708231e010b0318000d1720000d16142a0e1e19010e130f111900130e0f161416",
+            "patched": "02002711010026090105250e02062316030023040504141c060e230e060a1f0708231e010b0318000d1720000d16142a0e1e19010e130f110b04130e0f160b08",
+            "note": "First season: the UEFA Cup line-up"
         }
     ]
 }
