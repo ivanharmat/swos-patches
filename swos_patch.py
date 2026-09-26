@@ -86,7 +86,9 @@ def main():
             on = [p['variant'] for k, p in variants if state(game, p) == 'applied']
             label = on[0] if on else f'{len(variants)} to choose from'
             print(f'  [{"applied" if on else "available":9}] {group:34} {variants[0][1]["groupName"]}: {label}')
-            print(f'{"":13}use --apply {group}-<league>, for example {variants[0][0]}')
+            names = ', '.join(k for k, _ in variants[:3])
+            more = ', ...' if len(variants) > 3 else ''
+            print(f'{"":13}one at a time: --apply {names}{more}')
         return
 
     chosen = {}
