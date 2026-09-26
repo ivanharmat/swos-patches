@@ -21,6 +21,12 @@ bytes and can always be taken out again.
 | `european-places-<league>` | One league of your choice gets far more European places: its champion always plays in the Champions League, its cup winner always in the Cup Winners' Cup, and it gets three UEFA Cup places when you manage there (about two otherwise). The first season is drawn from fixed line-ups inside the game, so the league's strongest clubs are put into those as well. One league at a time; any European league outside the top group (Germany, Italy, Spain, England) can be picked, for example `european-places-slovakia`. |
 | `unlimited-transfers` | The chairman no longer stops you signing players. From the next season or job. |
 | `unlimited-career` | Careers carry on past 20 seasons; the management record keeps the latest 20. |
+| `squad-skills` | A SKILLS button on the squad screen, beside GOALS. Shows every player's seven skills and his form as numbered columns, with the column letters spelled out along the bottom. Fire goes back. |
+| `score-on-screen` | The score stays in the top right corner for the whole match, home team first, three letters a side. |
+
+`squad-skills` and `score-on-screen` add code, and the engine has only so much
+spare room for that. On `SWSENGPP.EXE` there is room for one of the two, so
+they are offered as a choice; on `SWS.EXE` there is room for both.
 
 ## Installing
 
@@ -42,6 +48,21 @@ The same commands work with `SWS.EXE`. The first command shows which
 patches the game carries. Applying writes a `.bak` backup next to the game
 the first time.
 
+## Building the code patches
+
+Most patches here are a handful of replaced bytes and are written by hand.
+`squad-skills` and `score-on-screen` are compiled: their source is in `src/`,
+one body per patch and one file of addresses per engine.
+
+```bash
+python3 build.py --swsengpp path/to/SWSENGPP.EXE --sws path/to/SWS.EXE
+```
+
+Needs `clang` and an **untouched** copy of each engine, which it checks by
+SHA-256 - it reads the replaced bytes out of it. `--check` builds and reports
+without writing. [PORTING.md](PORTING.md) explains how the addresses for the
+second engine were arrived at and how they were checked.
+
 ## Patch format
 
 `patches/<engine>/<key>.json`:
@@ -56,6 +77,10 @@ the first time.
     ]
 }
 ```
+
+A patch may also carry `requires`, naming another patch it needs, and
+`group` with `variant`, marking it one of a set only one of which can be
+applied at a time.
 
 Offsets are file offsets in the unmodified engine:
 
