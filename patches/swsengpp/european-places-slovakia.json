@@ -1,0 +1,70 @@
+{
+    "key": "european-places-slovakia",
+    "group": "european-places",
+    "groupName": "More European places for one league",
+    "variant": "Slovakia",
+    "name": "More European places: Slovakia",
+    "description": "Slovakia's champion always plays in the Champions League and its cup winner always in the Cup Winners' Cup. It also gets three UEFA Cup places when you manage there, and about two a season when you manage elsewhere. The places come from the countries that have the most.",
+    "changes": [
+        {
+            "offset": 1368700,
+            "original": "a094000004000400a494000006000500aa9400000b000500b594000016000200",
+            "patched": "a094000005000500a594000006000500ab9400000b000400b694000015000200",
+            "note": "European Cup: groups"
+        },
+        {
+            "offset": 1368736,
+            "original": "0e142308020d1d1e1f29010306070f191c21242526100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "0e1423084e020d1d1e1f29010306070f191c21242526100c0011051b1a181217040a0b131516202227284c",
+            "note": "European Cup: country lists"
+        },
+        {
+            "offset": 641250,
+            "original": "a494",
+            "patched": "a594",
+            "note": "European Cup: where a group list starts"
+        },
+        {
+            "offset": 641257,
+            "original": "aa94",
+            "patched": "ab94",
+            "note": "European Cup: where a group list starts"
+        },
+        {
+            "offset": 641264,
+            "original": "b594",
+            "patched": "b694",
+            "note": "European Cup: where a group list starts"
+        },
+        {
+            "offset": 1368779,
+            "original": "ef94000004000400f394000006000600f99400000b000b000495000016000b00",
+            "patched": "ef94000004000400f394000007000700fa9400000b000b000595000015000a00",
+            "note": "Cup Winners' Cup: groups"
+        },
+        {
+            "offset": 1368815,
+            "original": "0e142308020d1d1e1f29010306070f191c21242526100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "0e142308020d1d1e1f294e010306070f191c21242526100c0011051b1a181217040a0b131516202227284c",
+            "note": "Cup Winners' Cup: country lists"
+        },
+        {
+            "offset": 641285,
+            "original": "f994",
+            "patched": "fa94",
+            "note": "Cup Winners' Cup: where a group list starts"
+        },
+        {
+            "offset": 641292,
+            "original": "0495",
+            "patched": "0595",
+            "note": "Cup Winners' Cup: where a group list starts"
+        },
+        {
+            "offset": 1368894,
+            "original": "0e0e0e0e14141414232323230808080202020d0d0d1d1d1d1e1e1e1f1f1f29292901010303060607070f0f19191c1c2121242425252626100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "4e0e0e0e4e1414144e2323230808080202020d0d0d1d1d1d1e1e1e1f1f1f29292901010303060607070f0f19191c1c2121242425252626100c0011051b1a181217040a0b131516202227284c0e",
+            "note": "UEFA Cup: country lists"
+        }
+    ]
+}

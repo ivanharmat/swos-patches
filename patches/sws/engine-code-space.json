@@ -1,0 +1,13 @@
+{
+    "key": "engine-code-space",
+    "name": "Room for added code",
+    "description": "Marks the unused tail of the game's code segment as usable, so patches that add new code have somewhere to live. Changes nothing on its own; other patches need it.",
+    "changes": [
+        {
+            "offset": 11604,
+            "original": "5908",
+            "patched": "0010",
+            "note": "Code segment size covers the spare tail"
+        }
+    ]
+}

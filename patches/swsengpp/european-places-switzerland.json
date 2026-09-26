@@ -1,0 +1,40 @@
+{
+    "key": "european-places-switzerland",
+    "group": "european-places",
+    "groupName": "More European places for one league",
+    "variant": "Switzerland",
+    "name": "More European places: Switzerland",
+    "description": "Switzerland's champion always plays in the Champions League and its cup winner always in the Cup Winners' Cup. It also gets three UEFA Cup places when you manage there, and about two a season when you manage elsewhere. The places come from the countries that have the most.",
+    "changes": [
+        {
+            "offset": 1368700,
+            "original": "a094000004000400a494000006000500aa9400000b000500b594000016000200",
+            "patched": "a094000005000500a594000006000400ab9400000a000500b594000016000200",
+            "note": "European Cup: groups"
+        },
+        {
+            "offset": 1368736,
+            "original": "0e142308020d1d1e1f29010306070f191c21242526100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "0e14230825020d1d1e1f29010306070f191c212426100c0011051b1a181217040a0b131516202227284c4e",
+            "note": "European Cup: country lists"
+        },
+        {
+            "offset": 641250,
+            "original": "a494",
+            "patched": "a594",
+            "note": "European Cup: where a group list starts"
+        },
+        {
+            "offset": 641257,
+            "original": "aa94",
+            "patched": "ab94",
+            "note": "European Cup: where a group list starts"
+        },
+        {
+            "offset": 1368894,
+            "original": "0e0e0e0e14141414232323230808080202020d0d0d1d1d1d1e1e1e1f1f1f29292901010303060607070f0f19191c1c2121242425252626100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "250e0e0e25141414252323230808080202020d0d0d1d1d1d1e1e1e1f1f1f29292901010303060607070f0f19191c1c212124240e142626100c0011051b1a181217040a0b131516202227284c4e",
+            "note": "UEFA Cup: country lists"
+        }
+    ]
+}

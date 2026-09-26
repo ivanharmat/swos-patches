@@ -18,9 +18,7 @@ bytes and can always be taken out again.
 
 | Key | What it does |
 |---|---|
-| `uefa-cup-slovakia` | Slovakia gets 3 UEFA Cup places when you manage there and averages 2 otherwise. |
-| `champions-league-slovakia` | The Slovak champion always plays in the Champions League (European Cup). |
-| `cup-winners-cup-slovakia` | The Slovak cup winner always plays in the Cup Winners' Cup. |
+| `european-places-<league>` | One league of your choice gets far more European places: its champion always plays in the Champions League, its cup winner always in the Cup Winners' Cup, and it gets three UEFA Cup places when you manage there (about two otherwise). One league at a time; any European league outside the top group (Germany, Italy, Spain, England) can be picked, for example `european-places-slovakia`. |
 | `unlimited-transfers` | The chairman no longer stops you signing players. From the next season or job. |
 | `unlimited-career` | Careers carry on past 20 seasons; the management record keeps the latest 20. |
 

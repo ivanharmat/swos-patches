@@ -1,0 +1,40 @@
+{
+    "key": "european-places-czechia",
+    "group": "european-places",
+    "groupName": "More European places for one league",
+    "variant": "Czechia",
+    "name": "More European places: Czechia",
+    "description": "Czechia's champion always plays in the Champions League and its cup winner always in the Cup Winners' Cup. It also gets three UEFA Cup places when you manage there, and about two a season when you manage elsewhere. The places come from the countries that have the most.",
+    "changes": [
+        {
+            "offset": 1367692,
+            "original": "b094000004000400b494000006000500ba9400000b000500c594000016000200",
+            "patched": "b094000005000500b594000006000400bb9400000a000500c594000016000200",
+            "note": "European Cup: groups"
+        },
+        {
+            "offset": 1367728,
+            "original": "0e142308020d1d1e1f29010306070f191c21242526100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "0e14230806020d1d1e1f290103070f191c21242526100c0011051b1a181217040a0b131516202227284c4e",
+            "note": "European Cup: country lists"
+        },
+        {
+            "offset": 640399,
+            "original": "b494",
+            "patched": "b594",
+            "note": "European Cup: where a group list starts"
+        },
+        {
+            "offset": 640406,
+            "original": "ba94",
+            "patched": "bb94",
+            "note": "European Cup: where a group list starts"
+        },
+        {
+            "offset": 1367886,
+            "original": "0e0e0e0e14141414232323230808080202020d0d0d1d1d1d1e1e1e1f1f1f29292901010303060607070f0f19191c1c2121242425252626100c0011051b1a181217040a0b131516202227284c4e",
+            "patched": "060e0e0e06141414062323230808080202020d0d0d1d1d1d1e1e1e1f1f1f292929010103030e1407070f0f19191c1c2121242425252626100c0011051b1a181217040a0b131516202227284c4e",
+            "note": "UEFA Cup: country lists"
+        }
+    ]
+}

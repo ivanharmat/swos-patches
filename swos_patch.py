@@ -76,9 +76,24 @@ def main():
         recognised = hashlib.sha256(clean).hexdigest() == ENGINES[engine]['sha256']
         print('Engine:', ENGINES[engine]['label'])
         print('Game:', 'recognised' if recognised else 'has changes not covered by these patches')
+        groups = {}
         for key, patch in patches.items():
-            print(f'  [{state(game, patch):9}] {key:28} {patch["name"]}')
+            if 'group' in patch:
+                groups.setdefault(patch['group'], []).append((key, patch))
+                continue
+            print(f'  [{state(game, patch):9}] {key:34} {patch["name"]}')
+        for group, variants in groups.items():
+            on = [p['variant'] for k, p in variants if state(game, p) == 'applied']
+            label = on[0] if on else f'{len(variants)} to choose from'
+            print(f'  [{"applied" if on else "available":9}] {group:34} {variants[0][1]["groupName"]}: {label}')
+            print(f'{"":13}use --apply {group}-<league>, for example {variants[0][0]}')
         return
+
+    chosen = {}
+    for key in args.apply:
+        group = patches[key].get('group')
+        if group and chosen.setdefault(group, key) != key:
+            sys.exit(f'Only one {patches[key]["groupName"]} can be applied at a time.')
 
     for key in args.apply + args.remove:
         if state(game, patches[key]) == 'blocked':

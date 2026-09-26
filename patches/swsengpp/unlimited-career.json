@@ -4,12 +4,6 @@
     "description": "Careers no longer end after 20 seasons. When a career passes season 20 the oldest season drops out of the management record, the rest move up and you carry on in the last slot - the year keeps counting as normal.",
     "changes": [
         {
-            "offset": 11604,
-            "original": "790b",
-            "patched": "0010",
-            "note": "Code segment size, to cover the new routine"
-        },
-        {
             "offset": 830459,
             "original": "13",
             "patched": "7f",
@@ -69,5 +63,8 @@
             "patched": "66ff0666833e147245535157668b9ec80a00008dbec80a0000568db6320b0000b9de070000fcf3a45031c0b96a000000f3aa585e66899ec80a000066c706130066837e02137c0466ff4e025f595b5ee9e2c0fdff",
             "note": "New routine: shift the management record when passing season 20"
         }
+    ],
+    "requires": [
+        "engine-code-space"
     ]
 }
