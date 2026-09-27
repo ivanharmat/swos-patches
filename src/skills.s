@@ -174,7 +174,8 @@ ApplyLayout:
 5:
     lea esi, [edi + E_SKILLS]               # no buttons in this view, so the
     mov byte ptr [esi + 20], 2              # one we built carries the key to
-    mov word ptr [esi + 24], 302            # the columns along the bottom
+    mov byte ptr [esi + 22], 183            # the columns along the bottom,
+    mov word ptr [esi + 24], 302            # a line above where it sat
     mov byte ptr [esi + 26], 8
     mov byte ptr [esi + 28], 0              # no frame behind it
     mov byte ptr [esi + 37], 0x40           # left aligned
@@ -399,7 +400,7 @@ tSkillsButton:                                  # menu entry fields 4 to 39
     .byte 8, 6, 44, 255                         # left, right, up, down
     .byte 0, 1, 2, 3                            # where a skip carries on
     .byte 8, 6, 44, 255
-    .word 243, 183, 33, 15                      # x, y, width, height
+    .word 243, 185, 33, 15                      # x, y, width, height
     .word 2                                     # a framed entry
     .long 0x0E                                  # green, like GOALS beside it
     .word 2, 0                                  # with a string on it, centred
