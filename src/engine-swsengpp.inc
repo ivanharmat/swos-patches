@@ -18,6 +18,7 @@
 .set GOALSMODE,     0x16F47C    # 0 = squad, 1 = goals (and now skills)
 .set DRAWNPLAYER,   0x16F47E    # player the row being drawn belongs to
 .set SKILLDIFF2,    0x16F48C
+.set SQUADTEAM,     0x16F486    # the club whose squad is on screen
 
 .set TEAM1GOALS,    0x114C86
 .set TEAM2GOALS,    0x114C88

@@ -56,8 +56,6 @@
 .set COL0,          182             # first skill column, converted coordinates
 .set COLSTEP,       15
 .set COLW,          14
-.set FORMX,         288
-.set FORMW,         22
 .set HEADY,         14
 .set FIRSTROWY,     24
 
@@ -124,7 +122,10 @@ ApplyLayout:
     pushad
     cld
     call reload
-
+    mov esi, dword ptr [ebx + SQUADTEAM]    # on another club's squad the game
+    cmp byte ptr [esi + 4], 1               # shows the tenth entry itself, as
+    je 4f                                   # one wide EXIT - so leave the
+                                            # screen entirely alone there
     lea esi, [edi + 9 * ENTSZ]              # four buttons where there were
     mov word ptr [esi + 20], 171            # three: EXIT
     mov word ptr [esi + 24], 33
@@ -141,14 +142,13 @@ ApplyLayout:
     mov byte ptr [esi + 8], 10
     mov byte ptr [esi + 16], 10
 
-    push edi                                # the dead entry, rebuilt: the
-    lea esi, [ebp + BASE + tSkillsButton]   # conversion has already given it
-    lea edi, [edi + E_SKILLS + 4]           # the type, the colour and the
-    mov ecx, 6                              # controls of the EXIT it used to
-    rep movsd                               # be, so only these differ
+    push edi                                # the entry rebuilt as a button
+    lea esi, [ebp + BASE + tSkillsButton]
+    lea edi, [edi + E_SKILLS + 4]
+    mov ecx, 9
+    rep movsd
     pop edi
     lea esi, [edi + E_SKILLS]
-    mov word ptr [esi + 30], 0x0E           # green, like GOALS beside it
     lea eax, [ebp + BASE + HideWithGoals]   # shown exactly when GOALS is,
     mov dword ptr [esi + 48], eax           # decided afresh on every frame
     lea eax, [ebp + BASE + strSkills]
@@ -158,20 +158,23 @@ ApplyLayout:
 
     cmp word ptr [ebx + V_MODE], 0
     je 3f
-    lea esi, [ebp + BASE + tHide]           # the goals headings and totals
-2:                                          # have no place in this view
-    movzx eax, byte ptr [esi]
-    cmp eax, 255
-    je 5f
+    mov ecx, 13                             # the goals headings and totals
+2:                                          # have no place in this view:
+    cmp ecx, 16                             # entries 13 to 27, bar the title
+    je 6f                                   # and the black bar
+    cmp ecx, 23
+    je 6f
+    mov eax, ecx
     imul eax, eax, ENTSZ
     mov word ptr [edi + eax + 4], 1
-    inc esi
-    jmp 2b
+6:
+    inc ecx
+    cmp ecx, 28
+    jne 2b
 5:
     lea esi, [edi + E_SKILLS]               # no buttons in this view, so the
     mov byte ptr [esi + 20], 2              # one we built carries the key to
-    mov word ptr [esi + 22], 183            # the columns along the bottom
-    mov word ptr [esi + 24], 302
+    mov word ptr [esi + 24], 302            # the columns along the bottom
     mov byte ptr [esi + 26], 8
     mov byte ptr [esi + 28], 0              # no frame behind it
     mov byte ptr [esi + 37], 0x40           # left aligned
@@ -180,8 +183,10 @@ ApplyLayout:
     mov dword ptr [esi + 48], 0             # and it stays out of the way GOALS
     jmp 4f                                  # goes, by its own means now
 3:
-    call RestStencil                        # hand the stencil back as we
-4:                                          # found it
+    xor eax, eax                            # the game re-hides what it wants
+    call Vis5063                            # to; what it never re-shows would
+    call RestStencil                        # stay hidden for good otherwise
+4:
     popad
     ret
 
@@ -249,14 +254,24 @@ RowDraw:
     add esp, FRAME
 3:
     call reload
-    lea esi, [edi + 50 * ENTSZ]             # nothing else of the row's own
+    push 1                                  # nothing else of the row's own
+    pop eax
+    call Vis5063
+    popad
+    ret
+
+# --------------------------------------------------------------------------
+# Entries 50 to 63, hidden or shown together, by the word in ax. The game sets
+# some of them on every row it draws and never touches others, so what this
+# view hides it has to put back itself.
+Vis5063:
+    lea esi, [edi + 50 * ENTSZ]
     mov ecx, 14
-4:
-    mov word ptr [esi + 4], 1
+1:
+    mov word ptr [esi + 4], ax
     add esi, ENTSZ
     dec ecx
-    jnz 4b
-    popad
+    jnz 1b
     ret
 
 # --------------------------------------------------------------------------
@@ -311,11 +326,6 @@ DrawColumns:
     add ax, COLSTEP
     mov word ptr [esp + 4 + F_COLX], ax
     inc word ptr [esp + 4 + F_COL]
-    cmp word ptr [esp + 4 + F_COL], 7
-    jne 4f
-    mov word ptr [esp + 4 + F_COLX], FORMX  # form gets a wider column
-    mov word ptr [esp + 4 + F_COLW], FORMW
-4:
     cmp word ptr [esp + 4 + F_COL], 8
     jne 1b
 RestStencil:
@@ -379,19 +389,21 @@ strTrain:
 strHeads:
     .byte 'P', 0, 0, 'H', 0, 0, 'V', 0, 0, 'T', 0, 0
     .byte 'C', 0, 0, 'S', 0, 0, 'F', 0, 0, 'F', 'M', 0
-tHide:
-    .byte 13, 14, 15, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 255
 tPick:                                          # low two bits: which byte of
     .byte 0x00, 0x01, 0x81, 0x82, 0x02, 0x83, 0x03   # the four; top bit: the
                                                      # high nibble of it
 
 .align 4
-tSkillsButton:                                  # menu entry fields 4 to 27
+tSkillsButton:                                  # menu entry fields 4 to 39
     .word 0, 0                                  # shown, enabled
     .byte 8, 6, 44, 255                         # left, right, up, down
     .byte 0, 1, 2, 3                            # where a skip carries on
     .byte 8, 6, 44, 255
-    .word 243, 185, 33, 15                      # x, y, width, height
+    .word 243, 183, 33, 15                      # x, y, width, height
+    .word 2                                     # a framed entry
+    .long 0x0E                                  # green, like GOALS beside it
+    .word 2, 0                                  # with a string on it, centred
+    .word 0, 0                                  # (the text follows at runtime)
 strLegend:
     .asciz "PASS HEAD SHOT TACK CTRL SPD FIN FORM"
 end:
