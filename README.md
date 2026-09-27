@@ -80,7 +80,9 @@ second engine were arrived at and how they were checked.
 
 A patch may also carry `requires`, naming another patch it needs, and
 `group` with `variant`, marking it one of a set only one of which can be
-applied at a time.
+applied at a time. A grouped patch carries `groupName` and `groupDescription`
+as well: what the set is called and what it does, said without naming any one
+variant, for listing the set as a whole.
 
 Offsets are file offsets in the unmodified engine:
 

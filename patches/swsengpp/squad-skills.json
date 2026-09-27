@@ -2,6 +2,7 @@
     "key": "squad-skills",
     "group": "extra-feature",
     "groupName": "One extra feature (the engine has room for one)",
+    "groupDescription": "Two additions to choose between. Both put new code into the game, and this engine has room for one of them - the 95/96 edition has room for both, and offers them separately.",
     "variant": "Skills on the squad screen",
     "name": "Skills on the squad screen",
     "description": "Adds a SKILLS button beside GOALS on the squad screen. It shows each player's seven skills - passing, heading, velocity, tackling, control, shooting and finishing - and his form, as numbered columns, the way GOALS shows his goals, with the column letters spelled out along the bottom. Press fire to go back.",

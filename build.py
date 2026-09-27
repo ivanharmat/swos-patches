@@ -42,7 +42,11 @@ ENGINES = {
 }
 
 GROUP = dict(group='extra-feature',
-             groupName='One extra feature (the engine has room for one)')
+             groupName='One extra feature (the engine has room for one)',
+             groupDescription=(
+                 'Two additions to choose between. Both put new code into the game, and this engine '
+                 'has room for one of them - the 95/96 edition has room for both, and offers them '
+                 'separately.'))
 
 META = {
     'squad-skills': dict(
